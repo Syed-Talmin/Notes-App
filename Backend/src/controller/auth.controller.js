@@ -139,3 +139,24 @@ export const userProfile = async (req, res) => {
     })
   }
 }
+
+
+export const userUpdate = async (req, res) => {
+  try {
+    const {name,email} = req.body;
+    const user = await userModel.findOneAndUpdate({_id:req.user.id},{name,email},{new:true});
+    user.password = undefined;
+    user.__v = undefined;
+    return res.status(200).json({
+      success: true,
+      message: "User updated successfully",
+      user
+    })
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Something went wrong",
+      error: error.message
+    })
+  }
+}

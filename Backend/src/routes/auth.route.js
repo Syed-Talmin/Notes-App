@@ -10,5 +10,5 @@ router.post('/register',authValidator.userRegister, authController.userRegister)
 router.post('/login',authValidator.userLogin, authController.userLogin)
 router.get('/logout', authController.userLogout)
 router.get('/profile',authMiddleware, authController.userProfile)
-
+router.put('/profile/update/',authValidator.userUpdate, authMiddleware, authController.userUpdate)
 export default router

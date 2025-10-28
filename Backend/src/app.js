@@ -1,5 +1,6 @@
 import express from "express"
 import authRouter from "./routes/auth.route.js"
+import notesRouter from "./routes/notes.route.js"
 import cookieParser from "cookie-parser"
 const app = express()
 
@@ -11,5 +12,6 @@ app.get("/health-check", (req, res) => {
 })
 
 app.use("/api/auth", authRouter)
+app.use("/api/notes", notesRouter)
 
 export default app
