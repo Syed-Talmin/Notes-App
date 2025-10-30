@@ -22,7 +22,9 @@ const updateNote = [
   body("description")
     .isLength({ min: 3 })
     .withMessage("Description must be at least 3 characters long"),
-  body("category").isArray().withMessage("Category must be an array").optional(),
+  body("category")
+    .isLength({ min: 3 })
+    .withMessage("Category must be at least 3 characters long"),
   validtion,
 ]
 

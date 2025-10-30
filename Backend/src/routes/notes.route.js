@@ -7,18 +7,24 @@ const router = Router();
 
 router.get("/", authMiddleware, notesController.getNotes);
 
+router.get("/categories", authMiddleware, notesController.getCategories);
+
 router.post(
   "/create",
   authMiddleware,
   notesValidator.createNote,
   notesController.createNote
 );
+
 router.put(
   "/update/:id",
   authMiddleware,
   notesValidator.updateNote,
   notesController.updateNote
 );
+
 router.delete("/delete/:id", authMiddleware, notesController.deleteNote);
+
+router.post("/summarize", authMiddleware, notesController.summarizeNotes);
 
 export default router;
