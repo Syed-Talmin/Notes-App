@@ -24,7 +24,6 @@ export const createNote = async (req, res) => {
 
     if ((!title || title === "") && (!category || category === "")) {
       const response = await generateTitleAndCategory({ notes: description });
-      console.log(response);
       title = response.title;
       category = response.category;
     } else {
