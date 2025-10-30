@@ -39,10 +39,10 @@ export default function NotesForm() {
     );
 
   return (
-    <div className="h-screen w-full bg-black p-8">
+    <div className="h-screen w-full bg-black md:p-8 p-4">
       <form
         onSubmit={handleSubmit(handleCreateNote)}
-        className="max-w-5xl mx-auto h-[85vh] bg-zinc-950 border border-zinc-800 rounded-lg p-8"
+        className="max-w-5xl mx-auto h-[85vh] bg-zinc-950 border border-zinc-800 rounded-lg md:p-8 p-4"
       >
         {/* Header Bar */}
         <div className="flex items-center justify-between mb-6">
@@ -73,7 +73,7 @@ export default function NotesForm() {
               <input
                 type="text"
                 placeholder="Add category (optional)"
-                className="bg-transparent text-gray-300 text-sm focus:outline-none placeholder-gray-600 w-40"
+                className="bg-transparent text-gray-300 text-sm focus:outline-none placeholder-gray-600 md:w-40 w-20"
                 list="categories"
                 {...register("category", { required: false, maxLength: 10 })}
               />
