@@ -242,6 +242,10 @@ const ShowNote = () => {
               {editActive ? (
                 <>
                   <button
+                    onClick={() => {
+                      reset();
+                      setEditActive(false);
+                    }}
                     type="button"
                     className="px-4 py-2 text-gray-400 hover:text-white transition-colors text-sm font-medium"
                   >
